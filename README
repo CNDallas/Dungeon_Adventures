@@ -1,0 +1,46 @@
+After making the game start with ./rlg327
+-- commands have been removed as such functionality can be done in game
+
+Added a menu screen with four options:
+-Start Game
+-Settings
+-Replay Last Game
+-Quit Game
+
+Start and Quit are self explanatory
+
+Settings
+Settings can be choseng using the up and down arrow keys
+Can adjust the default monsters from 1 - 50
+Can adjust the default objects from 1 -50
+To ajust the user can user the left and right key or they can enter in a number
+Once settings are set the user must select save settings by hitting the enter key
+
+There are also hidden setting (cheats)
+This can be unlocked by typing 'cheats' a confirmation message will show up
+Once entered the teleport (g),player fog toggle(f), and auto play(A) are all enabled
+The user can continue by typing "health" "speed" or "damage" and hitting enter
+A confirmation message will pop up
+The user then enters a integer value which will set the corresponding player charateristic
+The user stays in the cheat interface until they enter a nonvalid command
+To reset the player back to default (without cheats or modified stats) the user can type in disable
+
+Replay Last Game
+Allows the user to step through there last game (left and right keys) with a bunch of statistics shown on the bottom
+The user can enable auto-play by hitting the 'a' button and can increase speed with '=' or '+' and decrease speed with '-' or '_'
+The default speed is suppose to mimic the same speed that the user played the game at
+The speed up/slow down value is show in the lower right corner
+Hitting the 'a' button again will remove the autoplay
+To get back to the main menu the user must hit the esc key and not be in auto mode
+This can get somewhat memory intensive. A game with a million moves will take up about 3.5gb of ram.
+
+Most of the new functions are put into the io.cpp file with the notable ones being:
+startScreen
+playerControls
+playerReplay
+resetReplay
+plus various helper functions
+
+I also added a 2d array of vectors to the dungeon to keep track of the replay as well as an array of vectors to keep track of statistics
+Changes were made throughout the game to keep track of such information
+
